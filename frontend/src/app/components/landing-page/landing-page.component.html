@@ -1,0 +1,27 @@
+<!-- Header -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30"
+            class="d-inline-block align-top" alt="">
+        Go URL Shortener
+    </a>
+</nav>
+
+<!-- Body -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Go URL Shortener</h1>
+        <p class="lead">Paste your URL below and click the button. It's that simple!</p>
+        <div class="row">
+            <div class="col-9">
+                <input type="url" placeholder="example.com" class="form-control" [(ngModel)]="userURL">
+            </div>
+            <div class="col-3">
+                <button class="btn btn-primary" type="submit" (click)="shortenURL()">Button</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <p *ngIf="shortURL">The shortened URL is {{shortURL}}</p>
+</div>
