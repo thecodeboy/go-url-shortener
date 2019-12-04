@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,7 +11,7 @@ export class LandingPageComponent implements OnInit {
   userURL: string;
   shortURL: string;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
   }
@@ -18,6 +19,10 @@ export class LandingPageComponent implements OnInit {
   shortenURL() {
     this.shortURL = this.userURL + "coco.com"
     console.log(this.shortURL)
+
+
+    this.httpClient.post("localhost:8080/api/v1/shorten", {"URL": "www.example.com", "Name": ""})
+
   }
 
 }
